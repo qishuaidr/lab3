@@ -1,0 +1,29 @@
+<meta charset="utf-8">
+	
+<meta name="description" content="test page">
+	
+<meta name="keywords" content="test page">
+
+<title>添加作者</title>
+
+<body>
+    <form method="post">
+        {% csrf_token %} 
+        <table border=1 align="center">
+             <tr>
+              <th id="authorid"><b>作者ID</b><input name="authorid" type="text"></td>
+              <th id="authorname"><b>作者姓名</b><input name="name" type="text"></th>
+              <th id="age"><b>作者年龄</b><input name="age" type="text"></td>
+              <th id="country"><b>作者国籍</b><input name="country" type="text"></th>
+              <th id="hhh"><input type="submit" value="保存"> <input type="reset" value="重填"></th>
+             </tr>
+        </table>
+    </form>
+    <div align="center">{{error}}</div>
+    <div class="goadd" align="center">
+        <a href=/ >回到首页</a>
+    </div>
+    <div class="goadd" align="center">
+        <a href=/add >添加图书</a>
+    </div>
+</body>
