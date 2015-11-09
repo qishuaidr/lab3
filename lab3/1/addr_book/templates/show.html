@@ -1,0 +1,25 @@
+<meta name="description" content="test page">
+	
+<meta name="keywords" content="test page">
+
+<title>图书管理系统</title>
+<body>
+    {% for book in book_list %}
+    <h1>{{book.Title}}</h1>
+    <ul>
+        <li><b>ISBN：</b>{{book.ISBN}}</li>
+        <li><b>出版社：</b>{{book.Publisher}}</li>
+        <li><b>出版时间：</b>{{book.PublishDate}}</li>
+        <li><b>价格：</b>{{book.Price}}</li>
+    </ul>
+    <h1>作者信息</h1>
+    <ul>
+        <li><b>姓名：</b>{{book.AuthorID.Name}}</li>
+        <li><b>年龄：</b>{{book.AuthorID.Age}}</li>
+        <li><b>出版时间：</b>{{book.AuthorID.Country}}</li>
+    </ul>
+    {% endfor %}
+    <div class="goadd" align="center">
+        <a href=/ >回到首页</a>
+    </div>
+</body>

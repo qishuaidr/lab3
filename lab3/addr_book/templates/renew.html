@@ -1,0 +1,31 @@
+<meta charset="utf-8">
+	
+<meta name="description" content="test page">
+	
+<meta name="keywords" content="test page">
+
+<title>图书管理系统</title>
+<body>
+    <form method="post">
+        {% csrf_token %} 
+        <table border=1 align="center">
+             <tr>
+              <td id="isbn"><b>ISBN</b><input name="isbn" type="text" value={{book.ISBN}}></td>
+              <td id="title"><b>书籍名称</b><input name="title" type="text" value={{book.Title}}></td>
+              <td id="authorid"><b>作者ID</b><input name="authorid" type="text" value={{book.AuthorID.AuthorID}}></td>
+              <td id="publisher"><b>出版社</b><input name="publisher" type="text" value={{book.Publisher}}></td>
+              <td id="publishdate"><b>出版日期</b><input name="publishdate" type="text" value={{book.PublishDate}}></td>
+              <td id="price"><b>价格</b><input name="price" type="text" value={{book.Price}}></td>
+              <td id="hhh"><input type="submit" value="更改"> <input type="reset" value="重填"></td>
+             </tr>
+        </table>
+    </form>
+    
+    <div class="goadd" align="center">
+        <a href={{href}}>{{error}}</a>
+    </div>
+    <div class="goadd" align="center">
+        <a href=/ >返回首页</a>
+    </div>
+    
+</body>

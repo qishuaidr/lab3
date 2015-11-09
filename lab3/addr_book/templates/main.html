@@ -1,0 +1,45 @@
+﻿<meta charset="utf-8">
+	
+<meta name="description" content="test page">
+	
+<meta name="keywords" content="test page">
+
+<title>图书管理系统</title>
+<body>
+    <form method="post">
+        {% csrf_token %} 
+        <table border=1 align="center">
+             <tr>
+              <td id="name"><b>作者姓名</b><input name="name" type="text"></td>
+              <td id="hhh"><input type="submit" value="查询"> <input type="reset" value="重填"></td>
+             </tr>
+        </table>
+    </form>
+
+    <div class="head">
+        <table border=1 align="center">
+             <tr>
+              <th id="isbn">ISBN</th><th id="title">书名</th><th id="author">作者</th><th id="publisher">出版社</th><th id="publishdate">发行日期</th><th id="price">价格</th><th id="delete">删除</th><th id="change">更新</th>
+             </tr>
+                {% for book in book_list %}
+             <tr>
+              <td id="isbn">{{ book.ISBN }}</td>
+              <td id="title"><a href=/show/?id={{book.ISBN}}>{{ book.Title }}</a></td>
+              <td id="author">{{ book.AuthorID.Name }}</td>
+              <td id="publisher">{{ book.Publisher }}</td>
+              <td id="publishdate">{{ book.PublishDate }}</td>
+              <td id="price">{{ book.Price }}</td>
+              <td id="delete"><a href=/delete/?id={{book.ISBN}}&name={{name}}>删除</a></td>
+              <td id="change"><a href=/renew/?id={{book.ISBN}}>更新</a></td>
+             </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+    <div class="goadd" align="center">
+        <a href=/add>增加图书</a>
+    </div>
+     <div class="goadd" align="center">
+        <a href=/ >回到首页</a>
+    </div>
+</body>
